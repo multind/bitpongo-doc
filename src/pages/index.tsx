@@ -31,10 +31,10 @@ export default function Home(): ReactNode {
       title: <Translate id="homepage.topic.openSource.title">Open source</Translate>,
       description: (
         <Translate id="homepage.topic.openSource.description">
-          Review the documentation source, report improvements, and contribute on GitHub.
+          Explore the Bitpongo frontend source and contribute on GitHub.
         </Translate>
       ),
-      to: 'https://github.com/multind/bitpongo-doc',
+      to: 'https://github.com/multind/bitpongo',
     },
   ];
 

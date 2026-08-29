@@ -2,5 +2,5 @@
   "title": {"message": "Bitpongo"},
   "logo.alt": {"message": "Bitpongo 標誌"},
   "item.label.Documentation": {"message": "文件"},
-  "item.label.GitHub": {"message": "GitHub"}
+  "item.label.Bitpongo GitHub": {"message": "Bitpongo GitHub"}
 }

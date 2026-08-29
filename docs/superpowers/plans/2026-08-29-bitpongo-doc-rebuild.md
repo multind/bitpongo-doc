@@ -39,11 +39,11 @@
 
 - [ ] **Step 2: Configure the public surface**
 
-  Set the title to `Bitpongo Docs`, configure the `multind/bitpongo-doc` repository, disable the blog, register sidebar `docs`, and exclude `superpowers/**`.
+  Set the title to `Bitpongo Docs`, link to the `multind/bitpongo` frontend repository, disable the blog, register sidebar `docs`, and exclude `superpowers/**`.
 
 - [ ] **Step 3: Add the branded homepage**
 
-  Add links to `/docs/introduction`, `/docs/notifications/bark`, and `https://github.com/multind/bitpongo-doc`, using the Bitpongo orange palette and responsive single-column cards on screens narrower than 780px.
+  Add links to `/docs/introduction`, `/docs/notifications/bark`, and `https://github.com/multind/bitpongo`, using the Bitpongo orange palette and responsive single-column cards on screens narrower than 780px.
 
 - [ ] **Step 4: Verify configuration and types**
 

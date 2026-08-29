@@ -3,7 +3,7 @@
   "link.title.Open source": {"message": "開放原始碼"},
   "link.item.label.Introduction": {"message": "簡介"},
   "link.item.label.Bark notifications": {"message": "Bark 通知"},
-  "link.item.label.GitHub": {"message": "GitHub"},
+  "link.item.label.Bitpongo frontend": {"message": "Bitpongo 前端"},
   "link.item.label.MIT License": {"message": "MIT 授權條款"},
   "copyright": {
     "message": "版權所有 © 2026 Bitpongo 貢獻者。使用 Docusaurus 建置。"

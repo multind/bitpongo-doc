@@ -13,7 +13,7 @@ Bitpongo 帮助用户配置并监控与所支持交易所账户连接的自动�
 ## 现有指南
 
 - [配置 Bark 通知](./notifications/bark.md)，接收交易结果、策略事件和运行告警。
-- 在 [Bitpongo 文档仓库](https://github.com/multind/bitpongo-doc)中查看源码或提出文档改进建议。
+- 在 [Bitpongo 前端仓库](https://github.com/multind/bitpongo)中查看应用源码并参与贡献。
 
 ## 安全原则
 

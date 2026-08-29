@@ -13,7 +13,7 @@ This documentation focuses on safe setup, notification behavior, operational exp
 ## Available guides
 
 - [Configure Bark notifications](./notifications/bark.md) for trade results, strategy events, and operational alerts.
-- Review the source or propose documentation improvements in the [Bitpongo documentation repository](https://github.com/multind/bitpongo-doc).
+- Explore the application source and contribute in the [Bitpongo frontend repository](https://github.com/multind/bitpongo).
 
 ## Security principles
 

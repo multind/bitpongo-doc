@@ -25,6 +25,13 @@ const cases = [
 
 for (const testCase of cases) {
   const homePath = path.join('build', testCase.basePath, 'index.html');
+  const introductionPath = path.join(
+    'build',
+    testCase.basePath,
+    'docs',
+    'introduction',
+    'index.html',
+  );
   const barkPath = path.join(
     'build',
     testCase.basePath,
@@ -33,8 +40,9 @@ for (const testCase of cases) {
     'bark',
     'index.html',
   );
-  const [home, bark] = await Promise.all([
+  const [home, introduction, bark] = await Promise.all([
     readFile(homePath, 'utf8'),
+    readFile(introductionPath, 'utf8'),
     readFile(barkPath, 'utf8'),
   ]);
 
@@ -44,6 +52,21 @@ for (const testCase of cases) {
     new RegExp(testCase.barkTitle),
     `${testCase.locale} Bark documentation`,
   );
+  assert.match(
+    home,
+    /href=(?:"https:\/\/github\.com\/multind\/bitpongo"|https:\/\/github\.com\/multind\/bitpongo)(?:\s|>)/,
+    `${testCase.locale} frontend repository link`,
+  );
+
+  for (const page of [home, introduction, bark]) {
+    assert.doesNotMatch(
+      page,
+      /github\.com\/multind\/bitpongo-doc/,
+      `${testCase.locale} must not expose the documentation repository`,
+    );
+  }
 }
 
-console.log('Verified English, Simplified Chinese, and Traditional Chinese builds.');
+console.log(
+  'Verified multilingual builds and Bitpongo frontend repository links.',
+);

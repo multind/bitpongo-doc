@@ -9,7 +9,7 @@
   },
   "homepage.topic.openSource.title": {"message": "开源项目"},
   "homepage.topic.openSource.description": {
-    "message": "查看文档源码、提出改进建议，并通过 GitHub 参与贡献。"
+    "message": "查看 Bitpongo 前端源码，并通过 GitHub 参与贡献。"
   },
   "homepage.meta.title": {"message": "文档"},
   "homepage.meta.description": {

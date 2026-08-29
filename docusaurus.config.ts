@@ -28,13 +28,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: ({locale, docPath}) => {
-            const docsPath =
-              locale === 'en'
-                ? 'docs'
-                : `i18n/${locale}/docusaurus-plugin-content-docs/current`;
-            return `https://github.com/multind/bitpongo-doc/edit/main/${docsPath}/${docPath}`;
-          },
           exclude: ['superpowers/**'],
         },
         blog: false,
@@ -55,8 +48,8 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          href: 'https://github.com/multind/bitpongo-doc',
-          label: 'GitHub',
+          href: 'https://github.com/multind/bitpongo',
+          label: 'Bitpongo GitHub',
           position: 'right',
         },
         {type: 'localeDropdown', position: 'right'},
@@ -76,12 +69,12 @@ const config: Config = {
           title: 'Open source',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/multind/bitpongo-doc',
+              label: 'Bitpongo frontend',
+              href: 'https://github.com/multind/bitpongo',
             },
             {
               label: 'MIT License',
-              href: 'https://github.com/multind/bitpongo-doc/blob/main/LICENSE',
+              href: 'https://github.com/multind/bitpongo/blob/main/LICENSE',
             },
           ],
         },
