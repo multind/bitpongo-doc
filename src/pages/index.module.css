@@ -1,0 +1,119 @@
+.hero {
+  padding: 6rem 1.5rem 5rem;
+  background:
+    radial-gradient(circle at 82% 10%, rgb(255 255 255 / 38%), transparent 30%),
+    linear-gradient(135deg, #ff8a32 0%, #ff6818 100%);
+  color: #fff;
+}
+
+.heroContent {
+  width: min(860px, 100%);
+  margin: 0 auto;
+}
+
+.logo {
+  width: 84px;
+  height: 84px;
+  margin-bottom: 1.5rem;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgb(109 40 0 / 20%);
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin-bottom: 1.25rem;
+  color: #fff;
+  font-size: clamp(2.7rem, 7vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.summary {
+  max-width: 680px;
+  margin-bottom: 2rem;
+  color: rgb(255 255 255 / 90%);
+  font-size: clamp(1.08rem, 2vw, 1.35rem);
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.actions :global(.button--primary) {
+  --ifm-button-background-color: #fff;
+  --ifm-button-border-color: #fff;
+  --ifm-button-color: #8e3100;
+}
+
+.actions :global(.button--outline) {
+  --ifm-button-background-color: transparent;
+  --ifm-button-color: #fff;
+}
+
+.topics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: min(1100px, calc(100% - 3rem));
+  margin: -2rem auto 5rem;
+}
+
+.topicCard {
+  padding: 1.8rem;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgb(66 35 16 / 10%);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.topicCard:hover {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgb(66 35 16 / 16%);
+}
+
+.topicCard h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+}
+
+.topicCard p {
+  min-height: 5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.topicCard span {
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+@media (max-width: 780px) {
+  .hero {
+    padding: 4.5rem 1.25rem 4rem;
+  }
+
+  .topics {
+    grid-template-columns: 1fr;
+    width: min(100% - 2rem, 560px);
+    margin-top: -1.5rem;
+  }
+
+  .topicCard p {
+    min-height: auto;
+  }
+}

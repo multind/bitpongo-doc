@@ -1,0 +1,5 @@
+label: Notifications
+position: 2
+link:
+  type: generated-index
+  description: Configure notification channels and understand alert behavior.
