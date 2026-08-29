@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {readFile} from 'node:fs/promises';
+import {readdir, readFile} from 'node:fs/promises';
 import path from 'node:path';
 
 const cases = [
@@ -67,6 +67,22 @@ for (const testCase of cases) {
   }
 }
 
+const cssDirectory = path.join('build', 'assets', 'css');
+const cssFiles = (await readdir(cssDirectory)).filter((file) =>
+  file.endsWith('.css'),
+);
+const compiledCss = (
+  await Promise.all(
+    cssFiles.map((file) => readFile(path.join(cssDirectory, file), 'utf8')),
+  )
+).join('\n');
+
+assert.doesNotMatch(
+  compiledCss,
+  /\.navbar\{[^}]*backdrop-filter:/,
+  'the mobile navbar must not establish a containing block for its fixed sidebar',
+);
+
 console.log(
-  'Verified multilingual builds and Bitpongo frontend repository links.',
+  'Verified multilingual builds, repository links, and mobile navigation CSS.',
 );

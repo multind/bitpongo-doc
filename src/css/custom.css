@@ -26,10 +26,6 @@
   --ifm-navbar-background-color: rgb(23 18 15 / 92%);
 }
 
-.navbar {
-  backdrop-filter: blur(12px);
-}
-
 .navbar__logo img {
   border-radius: 9px;
 }
