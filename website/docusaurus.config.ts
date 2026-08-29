@@ -170,7 +170,7 @@ const showLastUpdate = true;
 
 export default async function createConfigAsync() {
   return {
-    title: 'Docusaurus',
+    title: 'Bitpongo',
     tagline: getLocalizedConfigValue('tagline'),
     organizationName: 'facebook',
     projectName: 'docusaurus',
@@ -283,7 +283,7 @@ export default async function createConfigAsync() {
       process.env.DOCUSAURUS_CURRENT_LOCALE !== defaultLocale
         ? 'warn'
         : 'throw',
-    favicon: 'img/docusaurus.ico',
+    favicon: 'img/bitpongo-favicon.png',
     customFields: {
       crashTest,
       isDeployPreview,
@@ -696,11 +696,11 @@ export default async function createConfigAsync() {
       },
       navbar: {
         hideOnScroll: true,
-        title: 'Docusaurus',
+        title: 'Bitpongo',
         logo: {
-          alt: '',
-          src: 'img/docusaurus.svg',
-          srcDark: 'img/docusaurus_keytar.svg',
+          alt: 'Bitpongo Logo',
+          src: 'img/bitpongo-logo.png',
+          srcDark: 'img/bitpongo-logo.png',
           width: 32,
           height: 32,
         },
@@ -897,9 +897,9 @@ export default async function createConfigAsync() {
           },
         ],
         logo: {
-          alt: 'Meta Open Source Logo',
-          src: '/img/meta_opensource_logo_negative.svg',
-          href: 'https://opensource.fb.com',
+          alt: 'Bitpongo Logo',
+          src: '/img/bitpongo-logo.png',
+          href: '/',
         },
         copyright: `Copyright © ${new Date().getFullYear()} Meta Platforms, Inc. Built with Docusaurus.`,
       },
