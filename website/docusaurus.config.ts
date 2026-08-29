@@ -11,7 +11,6 @@ import rehypeKatex from 'rehype-katex';
 import configTabs from './src/remark/configTabs';
 
 import versions from './versions.json';
-import VersionsArchived from './versionsArchived.json';
 import {
   dogfoodingPluginInstances,
   dogfoodingThemeInstances,
@@ -36,11 +35,6 @@ import type {Options as ClientRedirectsOptions} from '@docusaurus/plugin-client-
 import type {ThemeConfig as LiveCodeBlockThemeConfig} from '@docusaurus/theme-live-codeblock';
 
 type ThemeConfig = Preset.ThemeConfig & LiveCodeBlockThemeConfig;
-
-const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(
-  0,
-  5,
-);
 
 function isPrerelease(version: string) {
   return (
@@ -501,13 +495,11 @@ export default async function createConfigAsync() {
             // sidebarCollapsible: false,
             // sidebarCollapsed: true,
             editUrl: ({locale, docPath}) => {
-              if (locale !== defaultLocale) {
-                return `https://crowdin.com/project/docusaurus-v2/${locale}`;
-              }
-              // We want users to submit updates to the upstream/next version!
-              // Otherwise we risk losing the update on the next release.
-              const nextVersionDocsDirPath = 'docs';
-              return `https://github.com/facebook/docusaurus/edit/main/website/${nextVersionDocsDirPath}/${docPath}`;
+              const docsPath =
+                locale === defaultLocale
+                  ? 'docs/'
+                  : `i18n/${locale}/docusaurus-plugin-content-docs/current/`;
+              return `https://github.com/multind/bitpongo-doc/edit/main/website/${docsPath}${docPath}`;
             },
             admonitions: {
               keywords: ['my-custom-admonition'],
@@ -706,192 +698,40 @@ export default async function createConfigAsync() {
         },
         items: [
           {
-            type: 'doc',
-            position: 'left',
-            docId: 'introduction',
-            label: 'Docs',
-          },
-          {
             type: 'docSidebar',
+            sidebarId: 'docs',
             position: 'left',
-            sidebarId: 'api',
-            label: 'API',
+            label: 'Documentation',
           },
-          {to: 'blog', label: 'Blog', position: 'left'},
-          {to: 'showcase', label: 'Showcase', position: 'left'},
           {
-            to: '/community/support',
-            label: 'Community',
-            position: 'left',
-            activeBaseRegex: `/community/`,
-          },
-          // This item links to a draft doc: only displayed in dev
-          {
-            type: 'doc',
-            docId: 'index',
-            label: 'Tests',
-            docsPluginId: 'docs-tests',
-          },
-          isDev && {to: '/__docusaurus/debug', label: 'Debug'},
-          // Custom item for dogfooding: only displayed in /tests/ routes
-          {
-            type: 'custom-dogfood-navbar-item',
-            content: '😉',
-          },
-          // Right
-          {
-            type: 'docsVersionDropdown',
+            href: 'https://github.com/multind/bitpongo-doc',
+            label: 'GitHub',
             position: 'right',
-            dropdownActiveClassDisabled: true,
-            dropdownItemsAfter: [
-              {
-                type: 'html',
-                value: '<hr class="dropdown-separator">',
-              },
-              {
-                type: 'html',
-                className: 'dropdown-archived-versions',
-                value: '<b>Archived versions</b>',
-              },
-              ...ArchivedVersionsDropdownItems.map(
-                ([versionName, versionUrl]) => ({
-                  label: versionName,
-                  href: versionUrl,
-                }),
-              ),
-              {
-                href: 'https://v1.docusaurus.io',
-                label: '1.x.x',
-              },
-              {
-                type: 'html',
-                value: '<hr class="dropdown-separator">',
-              },
-              {
-                to: '/versions',
-                label: 'All versions',
-              },
-            ],
           },
-          {
-            type: 'localeDropdown',
-            position: 'right',
-            dropdownItemsAfter: [
-              {
-                type: 'html',
-                value: '<hr style="margin: 0.3rem 0;">',
-              },
-              {
-                href: 'https://github.com/facebook/docusaurus/issues/3526',
-                label: 'Help Us Translate',
-              },
-            ],
-          },
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            position: 'right',
-            className: 'header-github-link',
-            'aria-label': 'GitHub repository',
-          },
-        ]
-          // TODO fix type
-          .filter(Boolean) as NonNullable<
-          Preset.ThemeConfig['navbar']
-        >['items'],
+        ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Learn',
+            title: 'Documentation',
             items: [
               {
                 label: 'Introduction',
-                to: 'docs',
+                to: '/docs/introduction',
               },
               {
-                label: 'Installation',
-                to: 'docs/installation',
-              },
-              {
-                label: 'Migration from v1 to v2',
-                to: 'docs/migration',
+                label: 'Bark notifications',
+                to: '/docs/notifications/bark',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Open source',
             items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Feature Requests',
-                to: '/feature-requests',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Help',
-                to: '/community/support',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: 'blog',
-              },
-              {
-                label: 'Changelog',
-                to: '/changelog',
-              },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-              {
-                html: `
-                <a href="https://www.netlify.com" target="_blank" rel="noreferrer noopener" aria-label="Deploys by Netlify">
-                  <img src="/img/footer/badge-netlify.svg" alt="Deploys by Netlify" width="114" height="51" />
-                </a>
-              `,
-              },
-              {
-                html: `
-                <a href="https://argos-ci.com" target="_blank" rel="noreferrer noopener" aria-label="Covered by Argos">
-                  <img src="/img/footer/badge-argos.svg" alt="Covered by Argos" width="133" height="20" />
-                </a>
-              `,
-              },
-            ],
-          },
-          {
-            title: 'Legal',
-            className: 'footer-column-legal',
-            // Don't remove the privacy and terms, it's a legal requirement.
-            items: [
-              {
-                label: 'Privacy',
-                className: 'footer-item-privacy',
-                href: 'https://opensource.facebook.com/legal/privacy/',
-              },
-              {
-                label: 'Terms',
-                href: 'https://opensource.facebook.com/legal/terms/',
-              },
-              {
-                label: 'Cookie Policy',
-                href: 'https://opensource.facebook.com/legal/cookie-policy/',
+                href: 'https://github.com/multind/bitpongo-doc',
               },
             ],
           },
@@ -901,7 +741,7 @@ export default async function createConfigAsync() {
           src: '/img/bitpongo-logo.png',
           href: '/',
         },
-        copyright: `Copyright © ${new Date().getFullYear()} Meta Platforms, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Bitpongo contributors. Built with Docusaurus.`,
       },
     } satisfies ThemeConfig,
   } satisfies Config;
