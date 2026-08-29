@@ -1,0 +1,28 @@
+{
+  "homepage.topic.getStarted.title": {"message": "开始使用"},
+  "homepage.topic.getStarted.description": {
+    "message": "了解 Bitpongo 的用途以及自动化投资流程的组织方式。"
+  },
+  "homepage.topic.bark.title": {"message": "配置 Bark"},
+  "homepage.topic.bark.description": {
+    "message": "为交易、策略事件和运行告警连接安全的 iOS 通知。"
+  },
+  "homepage.topic.openSource.title": {"message": "开源项目"},
+  "homepage.topic.openSource.description": {
+    "message": "查看文档源码、提出改进建议，并通过 GitHub 参与贡献。"
+  },
+  "homepage.meta.title": {"message": "文档"},
+  "homepage.meta.description": {
+    "message": "Bitpongo 自动化投资策略与通知的官方文档。"
+  },
+  "homepage.logo.alt": {"message": "Bitpongo 标志"},
+  "homepage.eyebrow": {"message": "BITPONGO 文档"},
+  "homepage.hero.title": {"message": "清晰了解自动化投资。"},
+  "homepage.hero.description": {
+    "message": "了解如何配置 Bitpongo、连接通知服务，并可靠地运行自动化策略。"
+  },
+  "homepage.action.docs": {"message": "阅读文档"},
+  "homepage.action.bark": {"message": "配置 Bark"},
+  "homepage.topics.ariaLabel": {"message": "文档主题"},
+  "homepage.topic.explore": {"message": "查看 →"}
+}

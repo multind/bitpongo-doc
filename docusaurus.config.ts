@@ -15,7 +15,12 @@ const config: Config = {
   onBrokenLinks: 'throw',
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh-Hans', 'zh-Hant'],
+    localeConfigs: {
+      en: {label: 'English', htmlLang: 'en'},
+      'zh-Hans': {label: '简体中文', htmlLang: 'zh-CN'},
+      'zh-Hant': {label: '繁體中文', htmlLang: 'zh-TW'},
+    },
   },
   presets: [
     [
@@ -23,8 +28,13 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: ({docPath}) =>
-            `https://github.com/multind/bitpongo-doc/edit/main/docs/${docPath}`,
+          editUrl: ({locale, docPath}) => {
+            const docsPath =
+              locale === 'en'
+                ? 'docs'
+                : `i18n/${locale}/docusaurus-plugin-content-docs/current`;
+            return `https://github.com/multind/bitpongo-doc/edit/main/${docsPath}/${docPath}`;
+          },
           exclude: ['superpowers/**'],
         },
         blog: false,
@@ -49,6 +59,7 @@ const config: Config = {
           label: 'GitHub',
           position: 'right',
         },
+        {type: 'localeDropdown', position: 'right'},
       ],
     },
     footer: {

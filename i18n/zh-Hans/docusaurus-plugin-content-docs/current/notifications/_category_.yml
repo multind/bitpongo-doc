@@ -1,0 +1,5 @@
+label: 通知
+position: 2
+link:
+  type: generated-index
+  description: 配置通知渠道并了解不同告警的发送方式。

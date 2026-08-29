@@ -1,0 +1,11 @@
+{
+  "link.title.Documentation": {"message": "文档"},
+  "link.title.Open source": {"message": "开源项目"},
+  "link.item.label.Introduction": {"message": "简介"},
+  "link.item.label.Bark notifications": {"message": "Bark 通知"},
+  "link.item.label.GitHub": {"message": "GitHub"},
+  "link.item.label.MIT License": {"message": "MIT 许可证"},
+  "copyright": {
+    "message": "版权所有 © 2026 Bitpongo 贡献者。使用 Docusaurus 构建。"
+  }
+}

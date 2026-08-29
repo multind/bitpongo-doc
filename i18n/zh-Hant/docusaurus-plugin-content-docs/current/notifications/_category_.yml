@@ -1,0 +1,5 @@
+label: 通知
+position: 2
+link:
+  type: generated-index
+  description: 設定通知管道並瞭解不同警示的傳送方式。
