@@ -1,0 +1,8 @@
+.git
+.idea
+.docusaurus
+node_modules
+.DS_Store
+.env
+.env.*
+npm-debug.log*
