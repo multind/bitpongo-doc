@@ -1,0 +1,73 @@
+# Crowdin credentials
+project_id: '428890'
+api_token_env: CROWDIN_PERSONAL_TOKEN
+# base_path: '.'
+# base_url: https://api.crowdin.com
+
+preserve_hierarchy: true
+
+# We generally want to use the "two-letters-code" of a locale (ie the language)
+# But not for all locales!
+# "pt-BR" may be better to remain as "pt-BR" instead of being transformed to "pt"
+# Note: &/* is Yaml anchor syntax: https://support.atlassian.com/bitbucket-cloud/docs/yaml-anchors/
+languages_mapping: &languages_mapping
+  two_letters_code:
+    pt-BR: pt-BR
+
+# Crowdin regularly update their MDX parser, leading to subtle breakage.
+# Freezing the parser to a specific version is helpful to ensure things keep
+# working when they upgrade their MDX parser.
+# See https://github.com/facebook/docusaurus/pull/11432
+#
+# Note: you can find the parser version of a Crowdin file using browser DevTools
+# and inspecting the MDX file icon, it should have a class ".file_type_mdx_v1_2"
+# Find the latest version: manually upload a new .mdx file, then inspect it
+#
+# How to upgrade the parser version?
+# - Rename /docs to /docs_backup on Crowdin UI (same for other mdx folders)
+# - Update the parser version of this config file
+# - Use the CLI to re-upload the MDX source files: they should now have the new parser version
+# - Use the CLI to download the translations
+# - Build the full i18n site to ensure it still works (the new parser might break things)
+# - Make sure the site content remains translated (normally /docs & /docs_backup share the translation strings)
+# - If things work well, you can merge the config update and delete the mdx backup folders on Crowdin UI
+mdx_file_type: &mdx_file_type mdx_v2_4
+
+#
+# Files configuration
+#
+files:
+  - source: /website/i18n/en/**/*
+    translation: /website/i18n/%two_letters_code%/**/%original_file_name%
+    languages_mapping: *languages_mapping
+
+  - source: /website/docs/**/*.mdx
+    translation: /website/i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+    languages_mapping: *languages_mapping
+    type: *mdx_file_type
+  - source: /website/docs/**/*
+    translation: /website/i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+    languages_mapping: *languages_mapping
+    ignore: [/**/*.mdx]
+
+  - source: /website/versioned_docs/**/*.mdx
+    translation: /website/i18n/%two_letters_code%/docusaurus-plugin-content-docs/**/%original_file_name%
+    languages_mapping: *languages_mapping
+    type: *mdx_file_type
+  - source: /website/versioned_docs/**/*
+    translation: /website/i18n/%two_letters_code%/docusaurus-plugin-content-docs/**/%original_file_name%
+    languages_mapping: *languages_mapping
+    ignore: [/**/*.mdx]
+
+  - source: /website/community/**/*
+    translation: /website/i18n/%two_letters_code%/docusaurus-plugin-content-docs-community/current/**/%original_file_name%
+    languages_mapping: *languages_mapping
+
+  - source: /website/blog/**/*
+    translation: /website/i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%
+    languages_mapping: *languages_mapping
+
+  - source: /website/src/pages/**/*
+    translation: /website/i18n/%two_letters_code%/docusaurus-plugin-content-pages/**/%original_file_name%
+    ignore: [/**/*.js, /**/*.jsx, /**/*.ts, /**/*.tsx, /**/*.css]
+    languages_mapping: *languages_mapping
