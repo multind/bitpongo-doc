@@ -69,7 +69,16 @@ export default function Home(): ReactNode {
               </Translate>
             </p>
             <div className={styles.actions}>
-              <Link className="button button--primary button--lg" to="/docs/introduction">
+              <Link
+                className="button button--primary button--lg"
+                to="https://app.imastermind.io"
+                target="_blank"
+                rel="noopener noreferrer">
+                <Translate id="homepage.action.app">Open Bitpongo</Translate>
+              </Link>
+              <Link
+                className="button button--outline button--primary button--lg"
+                to="/docs/introduction">
                 <Translate id="homepage.action.docs">Read the docs</Translate>
               </Link>
               <Link

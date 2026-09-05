@@ -21,6 +21,7 @@
   "homepage.hero.description": {
     "message": "瞭解如何設定 Bitpongo、連接通知服務，並可靠地執行自動化策略。"
   },
+  "homepage.action.app": {"message": "線上使用 Bitpongo"},
   "homepage.action.docs": {"message": "閱讀文件"},
   "homepage.action.bark": {"message": "設定 Bark"},
   "homepage.topics.ariaLabel": {"message": "文件主題"},

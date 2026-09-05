@@ -10,6 +10,12 @@ This repository contains the source for the Bitpongo documentation website. It i
 
 The documentation currently covers Bitpongo concepts, project entry points, and Bark notification setup. Contributions should keep all supported languages synchronized.
 
+## Try Bitpongo online
+
+Open the hosted application at [https://app.imastermind.io](https://app.imastermind.io). Create an account or sign in, connect a supported exchange account, and then create and monitor an automated strategy directly in your browser.
+
+This is a live service, not a simulated demo. Depending on your exchange and strategy settings, actions can submit real orders. Use an API key with trading permission only, keep withdrawal permission disabled, and review every setting before starting a strategy.
+
 ## Related repositories
 
 | Project | Repository |
