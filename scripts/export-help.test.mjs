@@ -39,9 +39,16 @@ test('does not export raw HTML, executable links or unrelated internal documents
   assert.match(json, /https:\/\/example.org\/help/);
 });
 
-test('fails before export when a translation or image is missing', async (t) => {
+test('fails before export when an image is missing', async (t) => {
   const options = await fixture(t, '![Missing](/img/guides/missing.png)');
   await assert.rejects(exportHelp(options), /image/i);
+});
+
+test('requires valid translated content before publishing the paired catalogue', async (t) => {
+  const options = await fixture(t);
+  await writeFile(path.join(options.root, 'i18n/zh-Hans/docusaurus-plugin-content-docs/current/guides/start.md'), 'Translation not ready');
+  await assert.rejects(exportHelp(options), /metadata/i);
+  await assert.rejects(readFile(path.join(options.output, 'catalog.json')), /ENOENT/);
 });
 
 test('rejects traversal topic IDs and local image paths', async (t) => {
@@ -49,4 +56,11 @@ test('rejects traversal topic IDs and local image paths', async (t) => {
   await assert.rejects(exportHelp(options), /image|path/i);
   await writeFile(path.join(options.root, 'help-topics.json'), JSON.stringify([{id: '../secret', category: 'start'}]));
   await assert.rejects(exportHelp(options), /topic/i);
+});
+
+test('preserves inline formulas and parameter names for App rendering and search', async (t) => {
+  const options = await fixture(t, 'Peak `20% × (1 - 5%) = 19%` and `registration_failed`.');
+  const article = (await exportHelp(options)).articles[0];
+  assert.match(article.searchText, /20% × \(1 - 5%\) = 19%/);
+  assert.match(JSON.stringify(article.blocks), /registration_failed/);
 });

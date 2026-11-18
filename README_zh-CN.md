@@ -1,5 +1,15 @@
 # Bitpongo 文档
 
+## 图文教程与 App 帮助中心
+
+新增 16 个用户主题及独立运维指南，提供英文、简体中文版本，覆盖开户、交易所连接、定投/F&G、价格提醒、通知渠道、分享及账号安全。繁体中文原有页面保留，新教程暂回退到英文。
+
+`docs/guides/` 与对应简体中文 Markdown 是网站和 App 帮助的共同内容源。`help-topics.json` 明确列出公开用户主题；运维指南和内部计划不会进入 App 帮助包。
+
+依次执行 `npm test`、`npm run typecheck`、`npm run build`、`npm run check:help`、`npm run check:i18n`。构建会导出 `build/help-docs/`。更新 App 帮助时，在相邻前端仓库执行 `npm run sync:help`，检查并提交生成的 `public/help-docs/`，再构建前端。只更新文档网站不会替换已安装 App 内的资源包。
+
+截图来自真实 H5 界面和本地拦截的演示数据，不包含真实账号或订单。启动本地 H5 后，通过 `H5_PREVIEW_URL=http://127.0.0.1:5186 npm run capture:guides` 重新截图；脚本禁止外部请求，不提交策略或提醒的最终表单。示意图通过 `node scripts/generate-guide-diagrams.mjs` 生成。提交前必须检查截图排版和敏感数据。
+
 [English](README.md) | [简体中文](README_zh-CN.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -8,7 +18,7 @@
 
 本仓库包含 Bitpongo 文档网站的源代码。网站使用 Docusaurus 构建，在同一套版本化源代码中发布英文、简体中文和繁体中文文档。
 
-当前文档主要包括 Bitpongo 基础概念、项目入口和 Bark 通知配置。参与贡献时应同步维护所有支持的语言。
+当前文档以中英文实用图文教程为主，保留原有繁体中文及 Bark 资料。新教程在繁体中文界面下明确回退至英文。
 
 ## 在线体验 Bitpongo
 
@@ -114,7 +124,7 @@ docker push corbettzhang/bitpongodoc:latest
 - 不要发布 API Key、Bark Device Key、密码、Access Token 或生产日志。
 - 对不可撤销操作和交易风险进行明确提示。
 - 命令应可以执行，提交 Pull Request 前检查引用路径。
-- 英文、简体中文和繁体中文内容需要同步更新。
+- 英文与简体中文教程须成对维护；已有繁体中文页面应同步维护，新教程可明确回退到英文。
 
 ## 参与贡献
 

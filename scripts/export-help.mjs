@@ -7,7 +7,6 @@ import remarkGfm from 'remark-gfm';
 import yaml from 'js-yaml';
 
 const parser = unified().use(remarkParse).use(remarkGfm);
-const text = node => node.value ?? (node.children ?? []).map(text).join(node.type === 'root' ? '\n' : '');
 const simpleTags = {paragraph: 'p', strong: 'strong', emphasis: 'em', inlineCode: 'code', blockquote: 'blockquote', listItem: 'li', tableRow: 'tr', tableCell: 'td'};
 
 function safeLink(url, ids) {
@@ -33,6 +32,7 @@ export async function exportHelp({root, output}) {
   async function convert(node) {
     if (node.type === 'html' || node.type === 'definition') return null;
     if (node.type === 'text') return {tag: 'text', text: node.value};
+    if (node.type === 'inlineCode') return {tag: 'code', children: [{tag: 'text', text: node.value}]};
     if (node.type === 'image') {
       if (!/^\/img\/guides\/[a-zA-Z0-9/_-]+\.(png|jpg|webp|svg)$/.test(node.url)) throw Error(`Unsafe help image path: ${node.url}`);
       const source = path.join(root, 'static', node.url);
@@ -50,7 +50,10 @@ export async function exportHelp({root, output}) {
     }
     if (node.type === 'heading') return {tag: `h${Math.min(4, Math.max(2, node.depth))}`, children};
     if (node.type === 'list') return {tag: node.ordered ? 'ol' : 'ul', children};
-    if (node.type === 'table') return {tag: 'table', children: [{tag: 'tbody', children}]};
+    if (node.type === 'table') {
+      if (children[0]) children[0].children = children[0].children.map(cell => ({...cell, tag: 'th'}));
+      return {tag: 'table', children: [{tag: 'tbody', children}]};
+    }
     return {tag: simpleTags[node.type] ?? 'span', children};
   }
   const articles = [];

@@ -16,16 +16,16 @@ export default function Home(): ReactNode {
           Understand what Bitpongo does and how its automated investment workflow is organized.
         </Translate>
       ),
-      to: '/docs/introduction',
+      to: '/docs/guides/quick-start',
     },
     {
-      title: <Translate id="homepage.topic.bark.title">Configure Bark</Translate>,
+      title: <Translate id="homepage.topic.notifications.title">Set up notifications</Translate>,
       description: (
-        <Translate id="homepage.topic.bark.description">
-          Connect secure iOS notifications for trades, strategy events, and operational alerts.
+        <Translate id="homepage.topic.notifications.description">
+          Configure App, email, Telegram and Webhook reminders with illustrated steps.
         </Translate>
       ),
-      to: '/docs/notifications/bark',
+      to: '/docs/guides/app-push',
     },
     {
       title: <Translate id="homepage.topic.openSource.title">Open source</Translate>,
@@ -83,8 +83,8 @@ export default function Home(): ReactNode {
               </Link>
               <Link
                 className="button button--outline button--primary button--lg"
-                to="/docs/notifications/bark">
-                <Translate id="homepage.action.bark">Configure Bark</Translate>
+                to="/docs/guides/price-alerts">
+                <Translate id="homepage.action.alerts">Create a price alert</Translate>
               </Link>
             </div>
           </div>

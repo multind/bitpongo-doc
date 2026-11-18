@@ -1,4 +1,7 @@
 {
+  "homepage.topic.notifications.title": {"message": "配置提醒渠道"},
+  "homepage.topic.notifications.description": {"message": "跟随图文步骤配置 App、邮件、Telegram 和 Webhook 提醒。"},
+  "homepage.action.alerts": {"message": "创建价格提醒"},
   "homepage.topic.getStarted.title": {"message": "开始使用"},
   "homepage.topic.getStarted.description": {
     "message": "了解 Bitpongo 的用途以及自动化投资流程的组织方式。"

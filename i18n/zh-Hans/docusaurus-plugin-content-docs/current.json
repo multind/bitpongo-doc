@@ -1,4 +1,9 @@
 {
   "version.label": {"message": "当前版本"},
-  "sidebar.docs.category.Notifications": {"message": "通知"}
+  "sidebar.docs.category.Notifications": {"message": "通知"},
+  "sidebar.docs.category.Getting started": {"message": "开始使用"},
+  "sidebar.docs.category.Trading strategies": {"message": "交易策略"},
+  "sidebar.docs.category.Markets and alerts": {"message": "行情与提醒"},
+  "sidebar.docs.category.Account and support": {"message": "账户与问题排查"},
+  "sidebar.docs.category.For operators": {"message": "运维人员指南"}
 }

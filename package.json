@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "docusaurus build && node scripts/export-help.mjs",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -16,6 +16,7 @@
     "check:i18n": "node scripts/check-built-locales.mjs",
     "test": "node --test scripts/*.test.mjs",
     "export:help": "node scripts/export-help.mjs",
+    "check:help": "node scripts/check-help.mjs",
     "capture:guides": "node scripts/capture-guides.mjs"
   },
   "dependencies": {
