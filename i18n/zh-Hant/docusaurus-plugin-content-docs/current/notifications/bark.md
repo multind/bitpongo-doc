@@ -5,6 +5,8 @@ description: 為 Bitpongo 使用者或伺服器部署設定 Bark 通知。
 
 # 設定 Bark 通知
 
+> 選用/歷史整合：原生 App、郵件、Telegram 和 Webhook 提醒不需要安裝 Bark。僅在目前部署仍提供 Bark 設定時使用本頁；新增 [App 通知指南](/docs/guides/app-push) 暫為英文。
+
 [Bark](https://github.com/Finb/Bark) 是一款開放原始碼的 iOS 通知應用程式。Bitpongo 使用它傳送交易結果、策略事件和系統警示。系統會根據事件類型自動選擇通知音效和緊急程度。
 
 :::warning 妥善保管推播網址

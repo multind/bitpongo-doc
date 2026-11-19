@@ -1,4 +1,7 @@
 {
+  "homepage.topic.notifications.title": {"message": "設定提醒管道"},
+  "homepage.topic.notifications.description": {"message": "App、郵件、Telegram 與 Webhook 圖文指南（新增內容暫為英文）。"},
+  "homepage.action.alerts": {"message": "建立價格提醒（英文指南）"},
   "homepage.topic.getStarted.title": {"message": "開始使用"},
   "homepage.topic.getStarted.description": {
     "message": "瞭解 Bitpongo 的用途以及自動化投資流程的組織方式。"
@@ -21,6 +24,7 @@
   "homepage.hero.description": {
     "message": "瞭解如何設定 Bitpongo、連接通知服務，並可靠地執行自動化策略。"
   },
+  "homepage.action.app": {"message": "線上使用 Bitpongo"},
   "homepage.action.docs": {"message": "閱讀文件"},
   "homepage.action.bark": {"message": "設定 Bark"},
   "homepage.topics.ariaLabel": {"message": "文件主題"},

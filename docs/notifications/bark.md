@@ -5,6 +5,8 @@ description: Configure Bark notifications for a Bitpongo user or server deployme
 
 # Configure Bark Notifications
 
+> Optional/legacy integration: native Bitpongo push, email, Telegram and Webhook do not require Bark. Only use this page if your deployment still exposes Bark settings. For the current App setup, start with [App notifications](../guides/app-push.md).
+
 [Bark](https://github.com/Finb/Bark) is an open-source iOS notification app. Bitpongo uses it to deliver trade results, strategy events, and operational alerts. Notification sound and urgency are selected automatically according to the event type.
 
 :::warning Keep the push URL private

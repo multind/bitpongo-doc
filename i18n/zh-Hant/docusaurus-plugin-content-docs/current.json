@@ -1,4 +1,9 @@
 {
   "version.label": {"message": "目前版本"},
-  "sidebar.docs.category.Notifications": {"message": "通知"}
+  "sidebar.docs.category.Notifications": {"message": "通知"},
+  "sidebar.docs.category.Getting started": {"message": "開始使用（新增指南暫為英文）"},
+  "sidebar.docs.category.Trading strategies": {"message": "交易策略（英文）"},
+  "sidebar.docs.category.Markets and alerts": {"message": "行情與提醒（英文）"},
+  "sidebar.docs.category.Account and support": {"message": "帳戶與問題排查（英文）"},
+  "sidebar.docs.category.For operators": {"message": "維運人員指南（英文）"}
 }

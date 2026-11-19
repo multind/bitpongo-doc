@@ -1,0 +1,18 @@
+[
+  {"id":"quick-start","category":"start"},
+  {"id":"exchange","category":"trading"},
+  {"id":"dca","category":"trading"},
+  {"id":"fng","category":"trading"},
+  {"id":"market","category":"alerts"},
+  {"id":"price-alerts","category":"alerts"},
+  {"id":"app-push","category":"notifications"},
+  {"id":"email","category":"notifications"},
+  {"id":"telegram","category":"notifications"},
+  {"id":"webhook","category":"notifications"},
+  {"id":"perception","category":"notifications"},
+  {"id":"inbox","category":"alerts"},
+  {"id":"sharing","category":"trading"},
+  {"id":"account","category":"account"},
+  {"id":"troubleshooting","category":"support"},
+  {"id":"faq","category":"support"}
+]

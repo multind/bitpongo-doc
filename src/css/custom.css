@@ -37,3 +37,16 @@
 .theme-code-block-highlighted-line {
   background-color: rgb(255 122 26 / 14%);
 }
+
+.theme-doc-markdown img[src*='/img/guides/'] {
+  display: block;
+  max-width: min(100%, 440px);
+  height: auto;
+  margin: 1.5rem auto;
+  border: 1px solid #e7ded6;
+  border-radius: 16px;
+}
+
+.theme-doc-markdown img[src$='.svg'] {
+  max-width: 100%;
+}

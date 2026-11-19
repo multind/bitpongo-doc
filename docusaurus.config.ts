@@ -62,7 +62,8 @@ const config: Config = {
           title: 'Documentation',
           items: [
             {label: 'Introduction', to: '/docs/introduction'},
-            {label: 'Bark notifications', to: '/docs/notifications/bark'},
+            {label: 'Get started', to: '/docs/guides/quick-start'},
+            {label: 'Notifications', to: '/docs/guides/app-push'},
           ],
         },
         {
